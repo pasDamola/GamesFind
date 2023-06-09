@@ -8,14 +8,18 @@ interface ListGroupProps {
 
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [isVisible, setVisibility] = useState(false);
+  const [bugs, setBugs] = useState([
+    { id: 1, title: "Bug 1", fixed: false },
+    { id: 2, title: "Bug 2", fixed: false },
+  ]);
 
   const handleClick = (item: number) => {
     setSelectedIndex(item);
-    setVisibility(true);
   };
 
-  console.log(isVisible);
+  const handleBugFix = () => {
+    setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+  };
 
   return (
     <>
@@ -36,6 +40,13 @@ function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
             }}
           >
             {item}
+          </li>
+        ))}
+      </ul>
+      <ul className="list-group">
+        {bugs.map((bug) => (
+          <li key={bug.id} onClick={handleBugFix}>
+            {bug.title} - {bug.fixed ? "Fixed" : "Not Fixed"}
           </li>
         ))}
       </ul>
