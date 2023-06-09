@@ -1,4 +1,5 @@
 import { useState } from "react";
+import produce from "immer";
 
 interface ListGroupProps {
   items: string[];
@@ -19,6 +20,15 @@ function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
 
   const handleBugFix = () => {
     setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
+  };
+
+  const handleBugFixImmer = () => {
+    setBugs(
+      produce((draft) => {
+        const bugToUpdate = draft.find((bug) => bug.id === 1);
+        if (bugToUpdate) bugToUpdate.fixed = true;
+      })
+    );
   };
 
   return (
