@@ -8,10 +8,14 @@ interface ListGroupProps {
 
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [isVisible, setVisibility] = useState(false);
 
   const handleClick = (item: number) => {
     setSelectedIndex(item);
+    setVisibility(true);
   };
+
+  console.log(isVisible);
 
   return (
     <>
