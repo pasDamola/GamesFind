@@ -7,10 +7,18 @@ const Game = () => {
       name: "Jon",
     },
   });
+  const [pizza, setPizza] = useState({
+    name: "Spicy Pepperoni",
+    toppings: ["Mushroom"],
+  });
 
   const handleClick = () => {
     setGame({ ...game, player: { ...game.player, name: "Bob" } });
+    setPizza({ ...pizza, toppings: [...pizza.toppings, "Barbecue"] });
   };
+
+  console.log(pizza);
+
   return (
     <div>
       Game
