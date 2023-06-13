@@ -18,6 +18,10 @@ function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
     setSelectedIndex(item);
   };
 
+  const handleUpdate = () => {
+    setBugs([...bugs, { id: 3, title: "Bug 4", fixed: true }]);
+  };
+
   const handleBugFix = () => {
     setBugs(bugs.map((bug) => (bug.id === 1 ? { ...bug, fixed: true } : bug)));
   };
