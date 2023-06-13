@@ -5,6 +5,7 @@ import { useState } from "react";
 import Like from "./components/Like";
 import Game from "./components/Game";
 import ExpandableText from "./components/ExpandableText";
+import Form from "./components/Form";
 
 function App() {
   const items = ["US", "Nigeria", "London"];
@@ -27,21 +28,20 @@ function App() {
       </Button>
       <Like onLikeButtonClicked={() => console.log("Like button clicked")} />
       <ExpandableText>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex dolor
-        voluptate quas architecto reiciendis excepturi quaerat, voluptatem
-        officia eos, aspernatur, labore temporibus. Velit veniam illo eum?
-        Dolores eligendi mollitia ratione. Lorem ipsum dolor sit amet
-        consectetur, adipisicing elit. Eaque praesentium magni odit! Amet
-        dignissimos eligendi officiis unde inventore, possimus voluptatibus
-        doloribus ab accusamus rem voluptatum veniam error soluta libero
-        consequatur? Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-        Quo quasi rerum deserunt repellat doloribus sint quae, earum consectetur
-        quia, voluptatum distinctio. Recusandae reprehenderit reiciendis dolor
-        ut minima quas ea repudiandae. Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Harum recusandae explicabo dolorem nemo aut nisi
-        itaque commodi ipsa velit, maiores, est alias tempore ipsam eum nulla
-        quia libero nostrum voluptatibus.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, esse!
+        Voluptate molestias similique placeat explicabo quos, molestiae, illum
+        perferendis possimus esse, sed sint tenetur? Veritatis sunt
+        necessitatibus saepe dolore, quasi eius quod. Numquam at, dolorem
+        quaerat facilis, omnis fuga quam dignissimos inventore quas fugit
+        quibusdam, delectus nam cupiditate impedit deserunt! Blanditiis alias
+        tempore explicabo facilis hic ullam sed quibusdam culpa quos eos!
+        Doloribus recusandae quaerat quam accusantium sapiente dolore culpa fuga
+        debitis, repellat molestiae reiciendis voluptatem blanditiis veritatis
+        non libero iste dolorum amet, explicabo vero? Quisquam eum quis fugit
+        aspernatur magni architecto, adipisci saepe asperiores, neque esse
+        dolore? Magni, quidem?
       </ExpandableText>
+      <Form />
     </div>
   );
 }

@@ -6,15 +6,15 @@ interface ExpandableTextProps {
 }
 
 const ExpandableText = ({ children, maxChars = 100 }: ExpandableTextProps) => {
-  const [charachters, setCharachters] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const handleClick = () => {
-    setCharachters(!charachters);
+    setIsExpanded(!isExpanded);
   };
   return (
     <>
-      <div>{charachters ? children : children.slice(0, maxChars)}....</div>
-      <button onClick={handleClick}>{charachters ? "Less" : "More"}</button>
+      <div>{isExpanded ? children : `${children.slice(0, maxChars)}...`}</div>
+      <button onClick={handleClick}>{isExpanded ? "Less" : "More"}</button>
     </>
   );
 };
