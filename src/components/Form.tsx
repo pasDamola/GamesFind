@@ -25,15 +25,12 @@ const Form = () => {
   };
 
   const handleClick = (id: number) => {
-    console.log(id);
-    const remainingItems = formValues.filter((item, index) => {
+    const remainingItems = formValues.filter((_, index) => {
       return id !== index;
     });
 
     setFormValues(remainingItems);
   };
-
-  console.log(formValues);
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)}>
